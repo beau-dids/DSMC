@@ -1,0 +1,15 @@
+#include <Testing_header_h>
+
+void setup()
+{
+pinMode(PH_A_IN, INPUT)
+pinMode(PH_B_IN, INPUT)
+pinMode(PH_C_IN, INPUT)
+
+pinMode(PH_A_OUT_H, OUTPUT)
+pinMode(PH_B_OUT_H, OUTPUT)
+pinMode(PH_C_OUT_H, OUTPUT)
+}
+
+void loop()
+{
