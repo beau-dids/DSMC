@@ -1,10 +1,12 @@
 #Current_Tasks
 
-Please create these routines in seperate file, while using the defined pins in the master header file. Feel free to make changes to the master header file but post on slack so we all know changes have been made.
+Please create these routines in seperate file, while using the defined pins in the master header file. Feel free to make changes 
+to the master header file but post on slack so we all know changes have been made.
 
 -Create PWM routine to output to the 3 defined pins in the header file (PH_#_OUT_H).
 	-These output pins should reflect our expected pin outputs
-	-Max frequency to output to the mosfet driver is 200kHz. I believe 50 kHz should be fine since the hall effect sensors should only be triggering at a few hundred hertz.
+	-Max frequency to output to the mosfet driver is 200kHz. I believe 50 kHz should be fine since the hall effect sensors should 
+	 only be triggering at a few hundred hertz.
 
 -Add 3 more pins to the PWM signal such that the low pins can be controlled (PH_#_OUT_L)
 
@@ -13,9 +15,11 @@ Please create these routines in seperate file, while using the defined pins in t
 
 -Read the ADC pin corresponding to driver input and have it affect the duty cycle of the PWM signal
 
--Create a fault routine such that the PH_#_OUT pins will stop outputting completely while the FAULT pin is reading high or low (which ever indicates a fault)
+-Create a fault routine such that the PH_#_OUT pins will stop outputting completely while the FAULT pin is reading high or low 
+ (which ever indicates a fault)
 
 -read ADC pins corresponding to the current sense resistors and calculate the current being read
 
 -Read and interpret the Sense_A back EMF readings from the motor
-	-This may require further research into when and what to look for. The mosfet driver has built in “dead times” such that this can be read, which may need to be understood further. 
+	-This may require further research into when and what to look for. The mosfet driver has built in “dead times” such that 
+	 this can be read, which may need to be understood further. 
