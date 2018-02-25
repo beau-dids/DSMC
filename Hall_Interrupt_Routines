@@ -1,0 +1,43 @@
+#include<Motor_Driver.h>
+
+//IN_A, IN_B, IN_C declarations in Header File
+
+void setup() {
+  attachInterrupt(digitalPinToInterrupt(PH_A_IN), HallA, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(PH_B_IN), HallB, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(PH_C_IN), HallC, CHANGE);
+  pinMode(PH_A_OUT_H, OUTPUT);
+  pinMode(PH_B_OUT_H, OUTPUT);
+  pinMode(PH_C_OUT_H, OUTPUT);
+  pinMode(PH_A_IN, INPUT);
+  pinMode(PH_B_IN, INPUT);
+  pinMode(PH_C_IN, INPUT);
+}
+
+void loop() {
+  //Driving_Pins();
+}
+
+void Driving_Pins(){
+  digitalWrite(PH_A_OUT_H, (In_A && !In_B)); //digital logic representing current state of the hall effect pins
+  digitalWrite(PH_B_OUT_H, (In_B && !In_C)); //When PWM signal is created, would like to && inputs with PWM state
+  digitalWrite(PH_C_OUT_H, (In_C && !In_A)); //When Fault is created, this can also && to the signal
+  /*Incorpaorating the low pins would look as:
+  digitalWrite(PH_A_OUT_L, (!In_A && In_B)); 
+  digitalWrite(PH_B_OUT_L, (!In_C && In_C));
+  digitalWrite(PH_C_OUT_L, (!In_C && In_B));
+ */ 
+}
+
+void HallA(){
+  Driving_Pins();
+}
+
+void HallB(){
+  Driving_Pins();
+}
+
+void HallC(){
+  Driving_Pins();
+  
+}
