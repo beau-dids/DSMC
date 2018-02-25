@@ -4,9 +4,13 @@
 #include "Arduino.h" 
 
 //input signals from hall effect sensors
-#define PH_A_IN 44//interrupt 1 on pin 44
-#define PH_B_IN 45//interrupt 2 on pin 44
-#define PH_C_IN 46//interrupt 3 on pin 46
+#define PH_A_IN 19//interrupt PCINT0 on pin 19
+#define PH_B_IN 20//interrupt PCINT1 on pin 20
+#define PH_C_IN 21//interrupt PCINT2 on pin 21
+
+#define In_A digitalRead(PH_A_IN) //read pin 19
+#define In_B digitalRead(PH_B_IN) //read pin 20
+#define In_C digitalRead(PH_C_IN) //read pin 21
 
 //output signals to the mosfet driver
 //These definitions reflect the posibility of 
