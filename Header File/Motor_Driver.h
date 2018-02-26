@@ -1,6 +1,6 @@
 #ifndef Testing_Header_h
 #define Testing_Header_h
-test this shit out
+
 #include "Arduino.h" 
 
 //input signals from hall effect sensors
